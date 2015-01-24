@@ -1,9 +1,5 @@
 $(document).ready(function() {    
 	
-	/*chrome.proxy.settings.get({}, function(config) {	
-      $("#cur_proxy").append('<p>'+config.value.rules.singleProxy.host+':'+config.value.rules.singleProxy.port+'</p>');
-	});*/
-	
 	if((localStorage.getItem('ip') != null) && (localStorage.getItem('port') != null))
 		$('#cur_proxy').empty().append('<p>Proxy set - '+localStorage.getItem('ip')+':'+localStorage.getItem('port')+'</p>');
 	else
@@ -115,31 +111,6 @@ $(document).ready(function() {
 		
 	  $('#cur_proxy').empty().append('<p>Proxy not used<p>');
 	}
-	
-	/*$.ajax({ 
-	     type: "GET",   
-         url: "http://vinayrv.appspot.com/geoproxy", 
-         async: false,
-         success : function(data)
-         {
-			var array = data.split(/[\n\s]/g);
-			var i=0;
-			while(i < array.length-3)
-			{
-				if((array[i]=="IN") || array[i]=="KR")
-				{
-					$("#new_proxy").append('<p>'+array[i]+'</p>');
-					i++;
-					continue;
-				}
-				else
-				{
-					$("#new_proxy").append('<a class="proxylist" href=#>'+array[i+1]+':'+array[i+3]+'</a></br>');
-					i = i + 4;
-				}	
-			}
-         }
-	});	*/
 		
  });
  
